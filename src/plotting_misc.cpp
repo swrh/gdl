@@ -222,7 +222,10 @@ void tvlct( EnvT* e ) {
     //GD: DO NOT NEVER EVER TOUCH THIS WITHOUT TRIPLE THINKING.
     //ANY CHANGE MUST BE IN GetScreenSize() and GetScreenResolution() for a DERIVED CLASS.
     SizeT nParam=e->NParam();
-    SizeT authorized_nb_params=1;
+    SizeT authorized_nb_params=0;
+#ifdef HAVE_X  
+    authorized_nb_params=1;
+#endif
     if ( nParam > authorized_nb_params) e->Throw( "Incorrect number of arguments.");
     char *TheDisplay=NULL;
     
