@@ -1280,7 +1280,7 @@ enum {
     if (isStructure) writeStructDesc(xdrs, static_cast<DStructGDL*>(var), isObject);
   }
 
-  uint32_t writeNormalVariable(XDR *xdrs, std::string varName, BaseGDL* var, int varflags=0x0) {
+  uint32_t writeNormalVariable(XDR *xdrs, const std::string &varName, BaseGDL* var, int varflags=0x0) {
     bool isSysVar=false;
     bool readonly=false;
     if (varflags & 0x02) //defines a system variable.
