@@ -305,36 +305,6 @@ else
   }
 }
 
-// DStructDesc* GDLInterpreter::GDLObjectDesc( DStructGDL* oStruct, ProgNodeP mp)
-// {
-//   //DStructGDL* oStruct = ObjectStruct( self, mp);
-//   
-//   // check accessibility
-//   DStructDesc* desc = oStruct->Desc();
-//   if( !desc->IsParent( GDL_OBJECT_NAME))
-//     {
-//       return NULL;
-//     }
-//   
-//   return desc;
-// }
-// 
-// void GDLInterpreter::ObjectStructCheckAccess( DStructGDL* oStruct, ProgNodeP mp)
-// {
-//   //DStructGDL* oStruct = ObjectStruct( self, mp);
-//   
-//   // check accessibility
-//   DStructDesc* desc = oStruct->Desc();
-//   if( !desc->IsParent( callStack.back()->GetPro()->Object()))
-//     {
-//       throw GDLException( mp, "Object of type "+desc->Name()+
-// 			  " is not accessible within "+
-// 			  callStack.back()->GetProName() + ": "+Name(self));
-//     }
-//   
-//   //return oStruct;
-// }
-
 // searches and compiles procedure (searchForPro == true) or function (searchForPro == false)  'pro'
 bool GDLInterpreter::SearchCompilePro(const string& pro, bool searchForPro) 
 {

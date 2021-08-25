@@ -102,256 +102,6 @@ GDLInterpreter::GDLInterpreter()
 		!(sigControlC && interruptEnable) && 
 		(debugMode == DEBUG_CLEAR));
 		
-		// commented out, because we are only at the last statement
-		// if( _retTree != NULL) 
-		//     last = _retTree;
-		
-		goto afterStatement;
-		
-		{
-		if (_t == ProgNodeP(antlr::nullAST) )
-			_t = ASTNULL;
-		switch ( _t->getType()) {
-		case ASSIGN:
-		{
-			ProgNodeP tmp1_AST_in = _t;
-			match(antlr::RefAST(_t),ASSIGN);
-			_t = _t->getNextSibling();
-			break;
-		}
-		case ASSIGN_ARRAYEXPR_MFCALL:
-		{
-			ProgNodeP tmp2_AST_in = _t;
-			match(antlr::RefAST(_t),ASSIGN_ARRAYEXPR_MFCALL);
-			_t = _t->getNextSibling();
-			break;
-		}
-		case ASSIGN_REPLACE:
-		{
-			ProgNodeP tmp3_AST_in = _t;
-			match(antlr::RefAST(_t),ASSIGN_REPLACE);
-			_t = _t->getNextSibling();
-			break;
-		}
-		case PCALL_LIB:
-		{
-			ProgNodeP tmp4_AST_in = _t;
-			match(antlr::RefAST(_t),PCALL_LIB);
-			_t = _t->getNextSibling();
-			break;
-		}
-		case MPCALL:
-		{
-			ProgNodeP tmp5_AST_in = _t;
-			match(antlr::RefAST(_t),MPCALL);
-			_t = _t->getNextSibling();
-			break;
-		}
-		case MPCALL_PARENT:
-		{
-			ProgNodeP tmp6_AST_in = _t;
-			match(antlr::RefAST(_t),MPCALL_PARENT);
-			_t = _t->getNextSibling();
-			break;
-		}
-		case PCALL:
-		{
-			ProgNodeP tmp7_AST_in = _t;
-			match(antlr::RefAST(_t),PCALL);
-			_t = _t->getNextSibling();
-			break;
-		}
-		case DEC:
-		{
-			ProgNodeP tmp8_AST_in = _t;
-			match(antlr::RefAST(_t),DEC);
-			_t = _t->getNextSibling();
-			break;
-		}
-		case INC:
-		{
-			ProgNodeP tmp9_AST_in = _t;
-			match(antlr::RefAST(_t),INC);
-			_t = _t->getNextSibling();
-			break;
-		}
-		case FOR:
-		{
-			ProgNodeP tmp10_AST_in = _t;
-			match(antlr::RefAST(_t),FOR);
-			_t = _t->getNextSibling();
-			break;
-		}
-		case FOR_LOOP:
-		{
-			ProgNodeP tmp11_AST_in = _t;
-			match(antlr::RefAST(_t),FOR_LOOP);
-			_t = _t->getNextSibling();
-			break;
-		}
-		case FOREACH:
-		{
-			ProgNodeP tmp12_AST_in = _t;
-			match(antlr::RefAST(_t),FOREACH);
-			_t = _t->getNextSibling();
-			break;
-		}
-		case FOREACH_LOOP:
-		{
-			ProgNodeP tmp13_AST_in = _t;
-			match(antlr::RefAST(_t),FOREACH_LOOP);
-			_t = _t->getNextSibling();
-			break;
-		}
-		case FOREACH_INDEX:
-		{
-			ProgNodeP tmp14_AST_in = _t;
-			match(antlr::RefAST(_t),FOREACH_INDEX);
-			_t = _t->getNextSibling();
-			break;
-		}
-		case FOREACH_INDEX_LOOP:
-		{
-			ProgNodeP tmp15_AST_in = _t;
-			match(antlr::RefAST(_t),FOREACH_INDEX_LOOP);
-			_t = _t->getNextSibling();
-			break;
-		}
-		case FOR_STEP:
-		{
-			ProgNodeP tmp16_AST_in = _t;
-			match(antlr::RefAST(_t),FOR_STEP);
-			_t = _t->getNextSibling();
-			break;
-		}
-		case FOR_STEP_LOOP:
-		{
-			ProgNodeP tmp17_AST_in = _t;
-			match(antlr::RefAST(_t),FOR_STEP_LOOP);
-			_t = _t->getNextSibling();
-			break;
-		}
-		case REPEAT:
-		{
-			ProgNodeP tmp18_AST_in = _t;
-			match(antlr::RefAST(_t),REPEAT);
-			_t = _t->getNextSibling();
-			break;
-		}
-		case REPEAT_LOOP:
-		{
-			ProgNodeP tmp19_AST_in = _t;
-			match(antlr::RefAST(_t),REPEAT_LOOP);
-			_t = _t->getNextSibling();
-			break;
-		}
-		case WHILE:
-		{
-			ProgNodeP tmp20_AST_in = _t;
-			match(antlr::RefAST(_t),WHILE);
-			_t = _t->getNextSibling();
-			break;
-		}
-		case IF:
-		{
-			ProgNodeP tmp21_AST_in = _t;
-			match(antlr::RefAST(_t),IF);
-			_t = _t->getNextSibling();
-			break;
-		}
-		case IF_ELSE:
-		{
-			ProgNodeP tmp22_AST_in = _t;
-			match(antlr::RefAST(_t),IF_ELSE);
-			_t = _t->getNextSibling();
-			break;
-		}
-		case CASE:
-		{
-			ProgNodeP tmp23_AST_in = _t;
-			match(antlr::RefAST(_t),CASE);
-			_t = _t->getNextSibling();
-			break;
-		}
-		case SWITCH:
-		{
-			ProgNodeP tmp24_AST_in = _t;
-			match(antlr::RefAST(_t),SWITCH);
-			_t = _t->getNextSibling();
-			break;
-		}
-		case BLOCK:
-		{
-			ProgNodeP tmp25_AST_in = _t;
-			match(antlr::RefAST(_t),BLOCK);
-			_t = _t->getNextSibling();
-			break;
-		}
-		case LABEL:
-		{
-			ProgNodeP tmp26_AST_in = _t;
-			match(antlr::RefAST(_t),LABEL);
-			_t = _t->getNextSibling();
-			break;
-		}
-		case ON_IOERROR_NULL:
-		{
-			ProgNodeP tmp27_AST_in = _t;
-			match(antlr::RefAST(_t),ON_IOERROR_NULL);
-			_t = _t->getNextSibling();
-			break;
-		}
-		case ON_IOERROR:
-		{
-			ProgNodeP tmp28_AST_in = _t;
-			match(antlr::RefAST(_t),ON_IOERROR);
-			_t = _t->getNextSibling();
-			break;
-		}
-		case BREAK:
-		{
-			ProgNodeP tmp29_AST_in = _t;
-			match(antlr::RefAST(_t),BREAK);
-			_t = _t->getNextSibling();
-			break;
-		}
-		case CONTINUE:
-		{
-			ProgNodeP tmp30_AST_in = _t;
-			match(antlr::RefAST(_t),CONTINUE);
-			_t = _t->getNextSibling();
-			break;
-		}
-		case GOTO:
-		{
-			ProgNodeP tmp31_AST_in = _t;
-			match(antlr::RefAST(_t),GOTO);
-			_t = _t->getNextSibling();
-			break;
-		}
-		case RETF:
-		{
-			ProgNodeP tmp32_AST_in = _t;
-			match(antlr::RefAST(_t),RETF);
-			_t = _t->getNextSibling();
-			break;
-		}
-		case RETP:
-		{
-			ProgNodeP tmp33_AST_in = _t;
-			match(antlr::RefAST(_t),RETP);
-			_t = _t->getNextSibling();
-			break;
-		}
-		default:
-		{
-			throw antlr::NoViableAltException(antlr::RefAST(_t));
-		}
-		}
-		}
-		
-		afterStatement:;
-		
 		// possible optimization: make sigControlC a debugMode 
 		if( interruptEnable && sigControlC)
 		{
@@ -389,19 +139,6 @@ GDLInterpreter::GDLInterpreter()
 		#endif
 		}
 		}
-		// else if( debugMode == DEBUG_SKIP)
-		//     {
-		//         if( last != NULL)
-		//             {
-		//                 last = last->getNextSibling();
-		//                 DebugMsg( last, "Skipped to: ");
-		//             }
-		//         else
-		//             DebugMsg( last, "Cannot SKIP fro here");
-		
-		//         debugMode = DEBUG_CLEAR;
-		//         retCode = RC_OK;
-		//     }
 		else if( interruptEnable)
 		{
 		if( debugMode == DEBUG_PROCESS_STOP)
@@ -532,20 +269,6 @@ GDLInterpreter::GDLInterpreter()
 		EnvUDT* iUDT = static_cast<EnvUDT*>(callStack[ix]);
 		targetEnv = iUDT;
 		
-		
-		// while( static_cast<EnvUDT*>(*(++i))->GetOnError() == 2 
-		//        && i != callStack.rend());
-		// if( i == callStack.rend())
-		// {
-		//     EnvUDT* cS_begin = 
-		//     static_cast<EnvUDT*>(*callStack.begin());
-		//     targetEnv = cS_begin;
-		// }
-		// else
-		// {
-		//     EnvUDT* iUDT = static_cast<EnvUDT*>(*i);
-		//     targetEnv = iUDT;
-		// }
 		}   
 		// 3 -> routine which called ON_ERROR
 		else if( oE == 3)
@@ -555,12 +278,6 @@ GDLInterpreter::GDLInterpreter()
 		targetEnv = iUDT;
 		}
 		
-		
-		// State where error occured
-		//                     if( e.getLine() == 0 && _t != NULL)
-		//                         e.SetLine( _t->getLine());
-		//                     if( e.getLine() == 0 && _retTree != NULL)
-		//                         e.SetLine( _retTree->getLine());
 		if( e.getLine() == 0 && last != NULL)
 		e.SetLine( last->getLine());
 		
@@ -573,9 +290,6 @@ GDLInterpreter::GDLInterpreter()
 		if( targetEnv->GetLineNumber() != 0)
 		e.SetLine( targetEnv->GetLineNumber());                    
 		
-		//                     ProgNodeP errorNodeP = targetEnv->CallingNode();
-		//                     e.SetErrorNodeP( errorNodeP);
-		
 		// break on first occurence of set oE
 		break;
 		}
@@ -587,15 +301,6 @@ GDLInterpreter::GDLInterpreter()
 		throw e; // rethrow
 		}
 		lib::write_journal( GetClearActualLine());
-		
-		// many low level routines don't have errorNode info
-		// set line number here in this case
-		//         if( e.getLine() == 0 && _t != NULL)
-		//             e.SetLine( _t->getLine());
-		//         if( e.getLine() == 0 && _retTree != NULL)
-		//             e.SetLine( _retTree->getLine());
-		//        if( e.getLine() == 0 && actPos != NULL)
-		//            e.SetLine( actPos->getLine());
 		
 		if( interruptEnable)
 		{
